@@ -3,14 +3,17 @@
     cd ~/workspace
     zf create project myproject
 
-    cd html5-boilerplate/build
-    ./createproject /home/me/workspace/myproject/public # note absolute path
+    cd html5-boilerplate/build/
+    ./createproject.sh public
 
-    cd ../../myproject
-    zf enable layouts
-    mv public/layout.phtml application/layouts/scripts
+    cd ../../
+	cp -r public/ myproject/public/
+	rm -rf public
 
-    cd public/build
+	cd myproject
+    zf enable layout
+    mv public/layout.phtml application/layouts/scripts/
+    cd public/build/
     ant
 
 ## License

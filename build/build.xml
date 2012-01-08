@@ -254,7 +254,6 @@
 
     <target name="-basics.production"
             depends="-intro,
-                     -post-zfint,
                      -usemin,
                      -js.all.minify,
                      -js.main.concat,
