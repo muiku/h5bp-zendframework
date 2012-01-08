@@ -254,6 +254,7 @@
 
     <target name="-basics.production"
             depends="-intro,
+                     -post-zfint,
                      -usemin,
                      -js.all.minify,
                      -js.main.concat,
@@ -350,6 +351,7 @@
 
     <target name="-build.production"
             depends="-intro,
+                     -pre-zfint,
                      -usemin,
                      -js.all.minify,
                      -js.main.concat,
@@ -360,7 +362,8 @@
                      -htmlclean,
                      -imagespng,
                      -imagesjpg,
-                     -copy"/>
+                     -copy,
+                     -post-zfint"/>
 
     <!-- Target: minify -->
     <target name="-minify.dev"
