@@ -18,15 +18,17 @@
 
 ### Development
 
-Just edit files as you have done before. Put your styles into css/style.css, add some images under img/, javascript goes into /js/scripts.js etc. etc.
+Just edit files as you have done before. Put your styles into css/style.css, add some images under img/, javascript goes into /js/scripts.js... etc. etc.
 
 ### Deployment
 
 Steps:
 
-- Run h5bp build script
-- Change the site docroot to point into public/publish/
-- Change production layouts folder in application.ini
+1) Run h5bp build script
+2) Change the site docroot to point into public/publish/
+3) Change production layouts folder in application.ini
+
+---
 
 1) This is where h5bp shines: a build script to optimize static files for the Web.
 
