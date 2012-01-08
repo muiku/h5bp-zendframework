@@ -37,7 +37,7 @@ Steps:
     cd public/build/
     ant # The H5BP build script will begin to run and compress your files.
 
-After successfull build we have got a bunch of new folders:
+After successful build we have got a bunch of new folders:
 
 - public/publish/
 - application/layouts/scripts/publish
@@ -49,8 +49,8 @@ After successfull build we have got a bunch of new folders:
 
         SetEnv APPLICATION_ENV production
 
-    	DocumentRoot /home/me/sites/www/myproject/public/publish
-    	<Directory /home/me/sites/www/myproject/public/publish>
+    	DocumentRoot /home/me/workspace/myproject/public/publish
+    	<Directory /home/me/workspace/myproject/public/publish>
 	    	AllowOverride All
 		    Order allow,deny
     		Allow from all
