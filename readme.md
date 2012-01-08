@@ -10,29 +10,29 @@
 
     cd ../../
     cp -r public/ myproject/public/
-    rm -rf public
+    rm -rf public/
 
-    cd myproject
+    cd myproject/
     zf enable layout
     mv public/layout.phtml application/layouts/scripts/
 
 ### Development
 
-Just edit files as you have done before. Put your styles into css/style.css, add some images under img/, javascript goes into /js/scripts.js... etc. etc.
+Just edit all the files as you have done before. Put your styles into public/css/style.css, add some images under public/img/, javascript goes into public/js/scripts.js ... etc. etc.
 
 ### Deployment
 
 Steps:
 
-1) Run h5bp build script
+1) Run H5BP build script
 
 2) Change the site docroot to point into public/publish/
 
-3) Change production layouts folder in application.ini
+3) Change the production layouts folder in application.ini
 
 ---
 
-1) This is where h5bp shines: a build script to optimize static files for the Web.
+1) This is where H5BP shines: a build script to optimize static files for the Web.
 
     cd public/build/
     ant # The H5BP build script will begin to run and compress your files.
@@ -40,7 +40,7 @@ Steps:
 After successful build we have got a bunch of new folders:
 
 - public/publish/
-- application/layouts/scripts/publish
+- application/layouts/scripts/publish/
 
 2) Change the docroot to point into public/publish/
 
@@ -84,6 +84,14 @@ After successful build we have got a bunch of new folders:
     phpSettings.display_errors = 1
     resources.frontController.params.displayExceptions = 1
     resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts"
+
+### Make it more
+
+You may like to enhance the HTML5 Boilerplate with these toolkits:
+
+- [Bootstrap](http://twitter.github.com/bootstrap/)
+- [jQuery UI Bootstrap](http://addyosmani.github.com/jquery-ui-bootstrap/)
+- [Skeleton](http://getskeleton.com/#grid)
 
 ## License
 
