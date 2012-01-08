@@ -18,13 +18,18 @@
 
 ### Development
 
-Just edit all the files as you have done before. Put your styles into public/css/style.css, add some images under public/img/, javascript goes into public/js/scripts.js ... etc. etc.
+Just edit any file as you have done before:
+
+- Put your styles into public/css/style.css
+- Add some images under public/img/
+- JavaScript goes into public/js/scripts.js
+- etc. etc.
 
 ### Deployment
 
 Steps:
 
-1) Run H5BP build script
+1) Run the H5BP build script
 
 2) Change the site docroot to point into public/publish/
 
@@ -32,12 +37,12 @@ Steps:
 
 ---
 
-1) This is where H5BP shines: a build script to optimize static files for the Web.
+1) This is where the H5BP shines: a build script to optimize static files for the Web.
 
     cd public/build/
     ant # The H5BP build script will begin to run and compress your files.
 
-After successful build we have got a bunch of new folders:
+After successful build we have got two new folders:
 
 - public/publish/
 - application/layouts/scripts/publish/
@@ -70,6 +75,8 @@ After successful build we have got a bunch of new folders:
     appnamespace = "Application"
     resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
     resources.frontController.params.displayExceptions = 0
+
+    ; Published (H5BP build script generated) layouts
     resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts/publish"
 
     [staging : production]
@@ -84,8 +91,6 @@ After successful build we have got a bunch of new folders:
     phpSettings.display_errors = 1
     resources.frontController.params.displayExceptions = 1
     resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts"
-
-### Make it more
 
 You may like to enhance the HTML5 Boilerplate with these toolkits:
 
