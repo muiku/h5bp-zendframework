@@ -25,7 +25,9 @@ Just edit files as you have done before. Put your styles into css/style.css, add
 Steps:
 
 1) Run h5bp build script
+
 2) Change the site docroot to point into public/publish/
+
 3) Change production layouts folder in application.ini
 
 ---
