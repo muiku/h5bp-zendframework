@@ -92,11 +92,7 @@ After successful build we have got two new folders:
     resources.frontController.params.displayExceptions = 1
     resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts"
 
-You may like to enhance the HTML5 Boilerplate with these toolkits:
-
-- [Bootstrap](http://twitter.github.com/bootstrap/)
-- [jQuery UI Bootstrap](http://addyosmani.github.com/jquery-ui-bootstrap/)
-- [Skeleton](http://getskeleton.com/#grid)
+If you have more layouts in addition to ZF default layout (layout.phtml), edit public/build/project.xml to add those.
 
 ## License
 
