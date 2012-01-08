@@ -25,7 +25,7 @@ Just edit any file as you have done before:
 - JavaScript goes into public/js/scripts.js
 - etc. etc.
 
-### Deployment
+### Deployment (Apache 2)
 
 Steps:
 
@@ -55,7 +55,9 @@ After successful build we have got two new folders:
         SetEnv APPLICATION_ENV production
 
     	DocumentRoot /home/me/workspace/myproject/public/publish
-    	<Directory /home/me/workspace/myproject/public/publish>
+        DirectoryIndex index.php
+
+        <Directory /home/me/workspace/myproject/public/publish>
 	    	AllowOverride All
 		    Order allow,deny
     		Allow from all

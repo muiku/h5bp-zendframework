@@ -425,7 +425,7 @@ Options -MultiViews
 # ----------------------------------------------------------------------
 
 # You can add custom pages to handle 500 or 403 pretty easily, if you like.
-ErrorDocument 404 /404.html
+#ErrorDocument 404 /404.html
 
 
 
@@ -464,7 +464,7 @@ AddCharset utf-8 .css .js .xml .json .rss .atom
 # includes directories used by version control systems such as Subversion or Git.
 <IfModule mod_rewrite.c>
   RewriteCond %{SCRIPT_FILENAME} -d
-	RewriteCond %{SCRIPT_FILENAME} -f
+  RewriteCond %{SCRIPT_FILENAME} -f
   RewriteRule "(^|/)\." - [F]
 </IfModule>
 
@@ -539,9 +539,12 @@ AddCharset utf-8 .css .js .xml .json .rss .atom
   php_value session.cookie_httponly true
 </IfModule>
 
+
+
 # ----------------------------------------------------------------------
 # Zend Framework
 # ----------------------------------------------------------------------
+
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
