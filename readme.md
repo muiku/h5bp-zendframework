@@ -9,12 +9,12 @@
     ./createproject.sh public
 
     cd ../../
-    cp -r public/ myproject/public/
+    cp -r public/ myproject/
     rm -rf public/
 
     cd myproject/
     zf enable layout
-    mv public/layout.phtml application/layouts/scripts/
+    mv public/layout.phtml application/layouts/scripts/layout.phtml
 
 ### Development
 
@@ -33,7 +33,9 @@ Steps:
 
 2) Change the site docroot to point into public/publish/
 
-3) Change the production layouts folder in application.ini
+3) Change the production layouts folder in application.ini and
+   remember to change APPLICATION_PATH one folder lower in
+   public/publish/index.php
 
 ---
 
