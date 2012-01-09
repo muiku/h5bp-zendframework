@@ -5,7 +5,7 @@
     cd ~/workspace
     zf create project myproject
 
-    cd html5-boilerplate/build/
+    cd h5bp-zendframework/build/
     ./createproject.sh public
 
     cd ../../
