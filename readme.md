@@ -1,5 +1,7 @@
 # HTML5 Boilerplate Zend Framework Integration
 
+[Compare to the original H5BP](https://github.com/muiku/h5bp-zendframework/compare/master...zfint)
+
 ### Create a new project
 
     cd ~/workspace
