@@ -1,5 +1,7 @@
 # HTML5 Boilerplate Zend Framework Integration
 
+[Compare to the original H5BP](https://github.com/muiku/h5bp-zendframework/compare/master...zfint)
+
 ### Create a new project
 
     cd ~/workspace
@@ -34,7 +36,7 @@ Steps:
 2) Change the site docroot to point into public/publish/
 
 3) Change the production layouts folder in application.ini and
-   remember to change APPLICATION_PATH one folder lower in
+   remember to check that APPLICATION_PATH is correctly defined in
    public/publish/index.php
 
 ---
