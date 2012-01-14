@@ -85,6 +85,10 @@ After successful build we have got two new folders:
     ; Published (H5BP build script generated) layouts
     resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts/publish"
 
+	; Ensure that view encoding is UTF-8 and that view helpers use HTML5
+    resources.view.encoding = "UTF-8"
+    resources.view.doctype = "HTML5"
+
     [staging : production]
 
     [testing : production]
