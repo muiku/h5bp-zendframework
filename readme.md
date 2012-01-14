@@ -34,7 +34,7 @@ Steps:
 2) Change the site docroot to point into public/publish/
 
 3) Change the production layouts folder in application.ini and
-   remember to change APPLICATION_PATH one folder lower in
+   remember to check that APPLICATION_PATH is correctly defined in
    public/publish/index.php
 
 ---
