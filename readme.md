@@ -16,7 +16,7 @@
 
     cd myproject/
     zf enable layout
-    mv public/layout.phtml application/layouts/scripts/layout.phtml
+    mv public/layout.phtml public/404.phtml application/layouts/scripts/
 
 ### Development
 
@@ -38,6 +38,8 @@ Steps:
 3) Change the production layouts folder in application.ini and
    remember to check that APPLICATION_PATH is correctly defined in
    public/publish/index.php
+
+4) Update ErrorController to change 404 layout in production
 
 ---
 
@@ -101,6 +103,39 @@ After successful build we have got two new folders:
     phpSettings.display_errors = 1
     resources.frontController.params.displayExceptions = 1
     resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts"
+
+4)
+
+    <?php
+
+class ErrorController extends Zend_Controller_Action
+{
+
+    public function errorAction()
+    {
+        $errors = $this->_getParam('error_handler');
+
+        if (!$errors || !$errors instanceof ArrayObject) {
+            $this->view->message = 'You have reached the error page';
+            return;
+        }
+
+        switch ($errors->type) {
+            case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_ROUTE:
+            case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_CONTROLLER:
+            case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_ACTION:
+                // 404 error -- controller or action not found
+                $this->getResponse()->setHttpResponseCode(404);
+                $priority = Zend_Log::NOTICE;
+                $this->view->message = 'Page not found';
+
+                // Change layout to show user and crowler friendly 404 page
+                if (APPLICATION_ENV === 'production') {
+                    $this->_helper->layout->setLayout('404');
+                }
+                break;
+
+    ...
 
 ## License
 
