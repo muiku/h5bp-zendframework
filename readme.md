@@ -104,7 +104,7 @@ After successful build we have got two new folders:
     resources.frontController.params.displayExceptions = 1
     resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts"
 
-4)
+4) Edit application/controllers/ErrorController.php
 
     <?php
     class ErrorController extends Zend_Controller_Action
