@@ -107,35 +107,30 @@ After successful build we have got two new folders:
 4)
 
     <?php
-
-class ErrorController extends Zend_Controller_Action
-{
-
-    public function errorAction()
+    class ErrorController extends Zend_Controller_Action
     {
-        $errors = $this->_getParam('error_handler');
+        public function errorAction()
+        {
+            ...
 
-        if (!$errors || !$errors instanceof ArrayObject) {
-            $this->view->message = 'You have reached the error page';
-            return;
+            switch ($errors->type) {
+                case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_ROUTE:
+                case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_CONTROLLER:
+                case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_ACTION:
+                    // 404 error -- controller or action not found
+                    $this->getResponse()->setHttpResponseCode(404);
+                    $priority = Zend_Log::NOTICE;
+                    $this->view->message = 'Page not found';
+
+                    // Change layout to show user (and crowler) friendly 404 page
+                    if (APPLICATION_ENV === 'production') {
+                        $this->_helper->layout->setLayout('404');
+                    }
+                    break;
+
+            ...
         }
-
-        switch ($errors->type) {
-            case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_ROUTE:
-            case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_CONTROLLER:
-            case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_ACTION:
-                // 404 error -- controller or action not found
-                $this->getResponse()->setHttpResponseCode(404);
-                $priority = Zend_Log::NOTICE;
-                $this->view->message = 'Page not found';
-
-                // Change layout to show user and crowler friendly 404 page
-                if (APPLICATION_ENV === 'production') {
-                    $this->_helper->layout->setLayout('404');
-                }
-                break;
-
-    ...
+    }
 
 ## License
 
