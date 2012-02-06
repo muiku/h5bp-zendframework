@@ -10,7 +10,7 @@
     cd myproject
     zf enable layout
 
-    wget --no-check-certificate https://github.com/muiku/h5bp-zendframework/tarball/v3.0-zfint -O - | tar xz
+    wget --no-check-certificate https://github.com/muiku/h5bp-zendframework/tarball/v3.0-zfint -O - | tar -xz --strip 1
     
 ## License
 
