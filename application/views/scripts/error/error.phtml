@@ -1,9 +1,41 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Page Not Found :(</title>
-  <style>
+<?php $this->headTitle('Page Not Found :('); ?>
+
+<h1>Not found <span>:(</span></h1>
+<p>Sorry, but the page you were trying to view does not exist.</p>
+<p>It looks like this was the result of either:</p>
+<ul>
+  <li>a mistyped address</li>
+  <li>an out-of-date link</li>
+</ul>
+<script>
+  var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
+</script>
+<script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+
+<?php if (APPLICATION_ENV === 'development' ?>
+  <hr />
+  <h1>An error occurred</h1>
+  <h2><?php echo $this->message ?></h2>
+
+  <?php if (isset($this->exception)): ?>
+  
+  <h3>Exception information:</h3>
+  <p>
+      <b>Message:</b> <?php echo $this->exception->getMessage() ?>
+  </p>
+
+  <h3>Stack trace:</h3>
+  <pre><?php echo $this->exception->getTraceAsString() ?>
+  </pre>
+
+  <h3>Request Parameters:</h3>
+  <pre><?php echo $this->escape(var_export($this->request->getParams(), true)) ?>
+  </pre>
+
+  <?php endif ?>
+<?php endif ?>
+
+<?php $this->headStyle()->captureStart(); ?>
     ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
     ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
     html { padding: 30px 10px; font-size: 20px; line-height: 1.4; color: #737373; background: #f0f0f0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -24,21 +56,5 @@
     #goog-wm-sb:hover, #goog-wm-sb:focus { border-color: #aaa; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); background-color: #f8f8f8; }
     #goog-wm-qt:focus, #goog-wm-sb:focus { border-color: #105cb6; outline: 0; color: #222; }
     input::-moz-focus-inner { padding: 0; border: 0; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Not found <span>:(</span></h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
-    <p>It looks like this was the result of either:</p>
-    <ul>
-      <li>a mistyped address</li>
-      <li>an out-of-date link</li>
-    </ul>
-    <script>
-      var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
-    </script>
-    <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
-  </div>
-</body>
-</html>
+<?php $this->headStyle()->captureEnd(); ?>
+
