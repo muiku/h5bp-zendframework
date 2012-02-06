@@ -541,6 +541,8 @@ AddCharset utf-8 .css .js .xml .json .rss .atom
 # Zend Framework
 # ----------------------------------------------------------------------
 
+RewriteBase /
+
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
