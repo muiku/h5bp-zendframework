@@ -5,7 +5,13 @@
     cd ~/workspace
     zf create project my-zfproject
     cd my-zfproject && zf enable layout
-    wget --no-check-certificate https://github.com/muiku/h5bp-zendframework/tarball/v3.0.1-zfint -O - | tar -xz --strip 1
+
+    # install development branch of h5bp zend framework integartion
+    wget --no-check-certificate https://github.com/muiku/h5bp-zendframework/tarball/zfint -O - | tar -xvz --strip 1
+
+    # or latest stable release
+    wget --no-check-certificate https://github.com/muiku/h5bp-zendframework/tarball/v3.0.1-zfint -O - | tar -xvz --strip 1
+
 
 Search for build script at https://github.com/muiku/h5bp-antbs-zendframework
     
