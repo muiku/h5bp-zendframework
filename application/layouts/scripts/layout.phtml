@@ -23,8 +23,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
 
   <?php
-    $this->headTitle()->prepend('Site title');
-    echo $this->headTitle()->setSeparator(' / ') . "\n";
+    echo $this->headTitle('Site title', 'PREPEND')->setSeparator(' / ') . "\n";
     echo $this->headMeta() . "\n";
   ?>
 
