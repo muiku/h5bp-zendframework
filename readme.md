@@ -10,7 +10,7 @@
     wget --no-check-certificate https://github.com/muiku/h5bp-zendframework/tarball/zfint -O - | tar -xvz --strip 1
 
     # or the latest stable release
-    wget --no-check-certificate https://github.com/muiku/h5bp-zendframework/tarball/v3.0.1-zfint -O - | tar -xvz --strip 1
+    wget --no-check-certificate https://github.com/muiku/h5bp-zendframework/tarball/v3.0.2-zfint -O - | tar -xvz --strip 1
 
 
 Search for build script at https://github.com/muiku/h5bp-antbs-zendframework
